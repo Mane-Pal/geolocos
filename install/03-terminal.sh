@@ -4,10 +4,10 @@
 set -e
 
 yay -S --noconfirm --needed \
-    wezterm \
-    eza fzf ripgrep zoxide bat \
-    fastfetch btop \
-    wl-clipboard
+  wezterm \
+  eza fzf ripgrep zoxide bat \
+  fastfetch btop \
+  nmtui wl-clipboard
 
 if ! command -v nvim &>/dev/null; then
   yay -S --noconfirm --needed nvim luarocks tree-sitter-cli
