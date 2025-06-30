@@ -1,0 +1,14 @@
+#!/bin/bash
+# Install terminal and CLI tools
+
+set -e
+
+yay -S --noconfirm --needed \
+    wezterm \
+    eza fzf ripgrep zoxide bat \
+    fastfetch btop \
+    wl-clipboard
+
+if ! command -v nvim &>/dev/null; then
+  yay -S --noconfirm --needed nvim luarocks tree-sitter-cli
+fi

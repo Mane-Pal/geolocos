@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  geoloc-test:
+    build: .
+    container_name: geoloc-arch-test
+    volumes:
+      - .:/geoloc-os
+    working_dir: /geoloc-os
+    tty: true
+    stdin_open: true
+    environment:
+      - TERM=xterm-256color
