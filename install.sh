@@ -15,7 +15,7 @@ source "$INSTALL_DIR/04-core-tools.sh"
 # System configuration
 source "$INSTALL_DIR/system-config.sh"
 
-# Always install components
+# Always install components (but not configure auto-start yet)
 source "$INSTALL_DIR/hyprland.sh"
 source "$INSTALL_DIR/desktop.sh"
 source "$INSTALL_DIR/development.sh"
@@ -28,8 +28,22 @@ source "$INSTALL_DIR/xtras.sh"
 source "$INSTALL_DIR/backgrounds.sh"
 source "$INSTALL_DIR/mimetypes.sh"
 
-# Setup dotfiles (final step)
+# Setup dotfiles
 source "$INSTALL_DIR/05-chezmoi.sh"
+
+# Re-apply Hyprland auto-start after chezmoi (ensures it's not overwritten)
+echo "Ensuring Hyprland auto-start is configured..."
+mkdir -p "$HOME/.config/shell"
+if ! grep -q "exec Hyprland" "$HOME/.config/shell/dev-environment" 2>/dev/null; then
+    cat >> "$HOME/.config/shell/dev-environment" << 'EOF'
+
+# Auto-start Hyprland on tty1 (applied after chezmoi)
+[[ -z $DISPLAY && $(tty) == /dev/tty1 ]] && exec Hyprland
+EOF
+    echo "✅ Hyprland auto-start configured post-chezmoi"
+else
+    echo "✅ Hyprland auto-start already configured"
+fi
 
 # Update locate database
 sudo updatedb

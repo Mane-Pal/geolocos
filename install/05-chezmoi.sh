@@ -5,7 +5,7 @@ set -e
 
 # Initialize chezmoi with your dotfiles repo
 # Update this URL with your actual chezmoi repo when you push it
-CHEZMOI_REPO="https://github.com/Mane-Pal/dotfiles.git"
+CHEZMOI_REPO="https://github.com/Mane-Pal/dotfiles"
 
 echo "Setting up dotfiles with chezmoi..."
 
