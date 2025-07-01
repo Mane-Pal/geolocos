@@ -1,4 +1,9 @@
+#!/bin/bash
+# Install extra applications
+
+set -e
+
 yay -S --noconfirm --needed \
-  signal-desktop spotify dropbox-cli zoom \
-  obsidian typora libreoffice obs-studio kdenlive \
-  pinta xournalpp
+  spotify \
+  obsidian typora libreoffice \
+  gimp xournalpp slack-desktop-wayland

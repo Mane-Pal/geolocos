@@ -8,4 +8,7 @@ yay -S --noconfirm --needed \
   imagemagick \
   postgresql-libs \
   github-cli \
-  lazygit lazydocker
+  lazygit lazydocker \
+  dbeaver \
+  task \
+  taskwarrior-tui
