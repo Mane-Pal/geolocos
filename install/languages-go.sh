@@ -31,7 +31,6 @@ go install github.com/go-delve/delve/cmd/dlv@latest                   # Debugger
 go install honnef.co/go/tools/cmd/staticcheck@latest                  # Static analyzer
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest # Linter
 go install github.com/air-verse/air@latest                            # Live reload
-go install github.com/cosmtrek/air@latest                             # Alternative live reload
 go install github.com/swaggo/swag/cmd/swag@latest                     # Swagger generator
 go install github.com/pressly/goose/v3/cmd/goose@latest               # Database migrations
 go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest                   # SQL code generator

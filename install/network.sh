@@ -36,9 +36,15 @@ echo "  • VPN support - OpenVPN and VPNC"
 echo "  • Bluetooth networking - bluez utilities"
 echo "  • WiFi tools - wpa_supplicant, wireless_tools, iw"
 echo ""
-echo "Services to enable:"
-echo "  • sudo systemctl enable --now NetworkManager"
-echo "  • sudo systemctl enable --now bluetooth"
+# Enable network services (skip in test environments)
+if [ "$USER" != "testuser" ]; then
+    echo "Enabling network services..."
+    sudo systemctl enable --now NetworkManager
+    sudo systemctl enable --now bluetooth
+    echo "✅ NetworkManager and bluetooth services enabled"
+else
+    echo "⚠️  Test environment detected, skipping service enablement"
+fi
 echo ""
 echo "Usage:"
 echo "  • WiFi: Click network icon in system tray"

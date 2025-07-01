@@ -4,7 +4,7 @@
 set -e
 
 yay -S --noconfirm --needed \
-  wezterm \
+  wezterm tmux \
   eza fzf ripgrep zoxide bat \
   fastfetch btop \
   nmtui wl-clipboard

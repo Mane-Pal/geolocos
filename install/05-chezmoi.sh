@@ -17,8 +17,15 @@ else
     chezmoi update
 fi
 
-# Make theme scripts executable
-chmod +x ~/.local/share/chezmoi/bin/* 2>/dev/null || true
+# Deploy and make bin scripts executable
+mkdir -p ~/.local/bin
+if [ -d ~/.local/share/chezmoi/bin ]; then
+    cp ~/.local/share/chezmoi/bin/* ~/.local/bin/ 2>/dev/null || true
+    chmod +x ~/.local/bin/* 2>/dev/null || true
+    echo "✅ Bin scripts deployed to ~/.local/bin/"
+else
+    echo "⚠️  No bin scripts found in chezmoi"
+fi
 
 echo "✅ Dotfiles setup completed!"
 echo "💡 Use 'theme-set <theme_name>' to switch themes"

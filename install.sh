@@ -15,6 +15,9 @@ source "$INSTALL_DIR/04-core-tools.sh"
 # System configuration
 source "$INSTALL_DIR/system-config.sh"
 
+# Network management (critical for WiFi)
+source "$INSTALL_DIR/network.sh"
+
 # Always install components (but not configure auto-start yet)
 source "$INSTALL_DIR/hyprland.sh"
 source "$INSTALL_DIR/desktop.sh"
@@ -27,6 +30,10 @@ source "$INSTALL_DIR/printer.sh"
 source "$INSTALL_DIR/xtras.sh"
 source "$INSTALL_DIR/backgrounds.sh"
 source "$INSTALL_DIR/mimetypes.sh"
+
+# Optional: Development languages (comment out if not needed)
+source "$INSTALL_DIR/languages-python.sh"
+source "$INSTALL_DIR/languages-go.sh"
 
 # Setup dotfiles
 source "$INSTALL_DIR/05-chezmoi.sh"
